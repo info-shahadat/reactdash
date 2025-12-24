@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App layout */
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background-color: #374151;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #003032;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  padding-right:40px;
+  height: 68px;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 1.2;
+  position: relative;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.user-name {
+  font-size: 14px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  z-index: 1003;
+  background-color: #014f4c;
+}
+
+.dropdown a,
+.dropdown button {
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #f3f4f6;
+  background: none;
+  border: none;
+  text-align: left;
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+  background-color: #00bfa5;
+  color: #003032;
+  border-radius: 6px;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  padding: 10px;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+/* Mobile styles */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;  
+  right: 0;
+  height: 70px;
+  background-color: #003032;
+  color: white;
+  align-items: center;
+  padding: 0px 20px;
+  padding-left: 10px;
+  z-index: 1001;
+}
+
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.mobile-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+
+.user-menu-mobile {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.user-avatar-mobile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 8px;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.user-name-mobile {
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.dropdown-mobile {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  z-index: 1003;
+  background-color: #014f4c;
+}
+
+.dropdown-mobile a,
+.dropdown-mobile button {
+  padding: 10px 12px;
+  text-decoration: none;
+  color: #f3f4f6;
+  background: none;
+  border: none;
+  text-align: left;
+  /* width: 100%; */
+  cursor: pointer;
+}
+
+.dropdown-mobile a:hover,
+.dropdown-mobile button:hover {
+    background-color: #00bfa5;
+    color: #003032;
+    border-radius: 6px;
+}
+
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1002;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .desktop-header {
+    display: none;
+  }
+
+  .main {
+    margin-top: 60px;
+  }
+}
