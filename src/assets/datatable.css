@@ -1,0 +1,29 @@
+/* src/assets/datatable.css */
+
+/* Table title header */
+.data-table-header {
+  background-color: #00686b;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 5px;
+}
+
+.rdt_TableHeader {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  align-items: unset !important;   
+}
+/* Table wrapper full width */
+.data-table-wrapper {
+  width: 100%;
+}
+
+/* Optional: input search box style */
+.data-table-search {
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
