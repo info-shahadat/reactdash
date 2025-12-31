@@ -7,6 +7,7 @@ import Home from "./pages/home";
 import Setting from "./pages/settings";
 import Report from "./pages/reports";
 import User from "./pages/users";
+import Activity from "./pages/activities";
 
 function InnerApp() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -98,7 +99,7 @@ function InnerApp() {
                 <i className="bi bi-currency-dollar"></i><span>Sell Report</span>
               </NavLink>
 
-              <NavLink to="/reports/activity" className={({ isActive }) => isActive ? "active" : ""}>
+              <NavLink to="/activities" className={({ isActive }) => isActive ? "active" : ""}>
                 <i className="bi bi-activity"></i><span>Activity Report</span>
               </NavLink>
             </div>
@@ -147,6 +148,7 @@ function InnerApp() {
             <Route path="/reports/sell" element={<Report />} />
             <Route path="/reports/activity" element={<Report />} />
             <Route path="/users" element={<User />} />
+            <Route path="/activities" element={<Activity />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>
